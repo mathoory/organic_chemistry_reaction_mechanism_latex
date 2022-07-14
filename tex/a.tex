@@ -1,0 +1,19 @@
+\documentclass{article}
+\pagenumbering{gobble}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
+\usepackage{chemfig}
+\usepackage{chemmacros}
+
+\begin{document}
+
+\schemestart
+\chemfig{@{a2}C^{\oplus}(-[:90]CH_3)(-[:180]CH_3)(-[:270]CH_3)}\chemfig{\+ @{a1}Cl^{\ominus}}
+\arrow{<=>}\chemfig{C(-[:0]Cl)(-[:90]CHH_3)(-[:180]CH_3)(-[:270]CH_3)}
+\schemestop
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Arrows
+
+\chemmove{\draw(a1)..  controls +(100:5mm) and +(45:5mm)..  (a2);}
+
+\end{document}

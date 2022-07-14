@@ -19,7 +19,7 @@ out/%.png: tex/%.tex
 	$(PDFCROP) $(patsubst tex/%.tex,out/%.pdf,$^) $(patsubst tex/%.tex,out/%_cropped.pdf,$^)
 	$(RUNGS) -q -dBATCH -dNOPAUSE -dTextAlphaBits=4 -dGraphicsAlphaBits=4 -sDEVICE=png256 -r600x600 -sOutputFile=$@ $(patsubst tex/%.tex,out/%_cropped.pdf,$^)
 
-deploy : 
+deploy : $(PNG_FILES)
 	cd out && copy "*.png" $(DEPLOY_DIR)
 
 clean :
